@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Official Lucid Air & Gravity temporary front license plate holder. Tow-eye mount. Black stainless hardware. $45 total."/>
+  <title>Lucid Front Plate Holder – $45 | Tow-Eye Mount</title>
+
+  <!-- Lucid.com Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #E8C568;
+      --gold-bright: #FFD700;
+      --text: #F5F5F5;
+      --text-muted: #A0AEC0;
+      --bg: #0A0A0A;
+      --card: rgba(20, 20, 30, 0.7);
+      --border: rgba(212, 175, 55, 0.2);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* PARTICLES — START OFF-SCREEN & DROP FAST */
+    .particles {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      background: var(--gold-bright);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+      opacity: 0;
+      animation: dropFast 10s infinite linear;
+    }
+
+    @keyframes dropFast {
+      0% { transform: translateY(-150px) translateX(0); opacity: 0; }
+      5% { opacity: 0.7; }
+      95% { opacity: 0.7; }
+      100% { transform: translateY(calc(100vh + 100px)) translateX(var(--drift)); opacity: 0; }
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 100px 20px 80px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -1.5px;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .product-img {
+      width: 100%;
+      max-width: 620px;
+      border-radius: 24px;
+      margin: 48px auto;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--border);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: all 0.6s ease;
+    }
+
+    .product-img:hover {
+      transform: translateY(-12px) scale(1.01);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.3);
+    }
+
+    .price {
+      font-size: 4.2rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 36px 0 16px;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .price-note {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      font-weight: 500;
+    }
+
+    .features {
+      text-align: left;
+      max-width: 540px;
+      margin: 0 auto 48px;
+      padding: 32px;
+      background: var(--card);
+      backdrop-filter: blur(14px);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+
+    .features h3 {
+      font-size: 1.8rem;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .features .for-models {
+      font-size: 1.4rem;
+      color: var(--gold);
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .features ul {
+      list-style: none;
+      font-size: 1.08rem;
+    }
+
+    .features li {
+      margin: 18px 0;
+      padding-left: 44px;
+      position: relative;
+      color: #E2E8F0;
+      font-weight: 500;
+    }
+
+	.features li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 1.4em;
+      position: absolute;
+      left: 0;
+      top: -4px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .highlight {
+      background: rgba(20, 20, 30, 0.75);
+      padding: 28px;
+      border-left: 6px solid var(--gold);
+      margin: 48px auto;
+      max-width: 540px;
+      font-weight: 600;
+      color: #FFFFFF;
+      border-radius: 0 16px 16px 0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.15);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      backdrop-filter: blur(10px);
+    }
+
+    .paypal-form {
+      margin: 56px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #000;
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 24px 56px;
+      border-radius: 18px;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      box-shadow: 0 15px 35px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 440px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.7s;
+    }
+
+    .btn:hover::before { left: 100%; }
+
+    .btn:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+
+    .note {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      margin: 48px auto;
+      max-width: 580px;
+      line-height: 1.8;
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 100px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+      font-size: 0.98rem;
+      color: #64748B;
+    }
+
+    footer a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 480px) {
+      .container { padding: 80px 16px 60px; }
+      .logo { font-size: 2.4rem; }
+      .price { font-size: 3.4rem; }
+      .btn { font-size: 1.35rem; padding: 20px 40px; }
+      .features { padding: 24px; }
+      .features li { padding-left: 38px; }
+      .features li::before { width: 24px; height: 24px; }
+      .features h3 { font-size: 1.6rem; }
+      .features .for-models { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- PARTICLES — OFF-SCREEN, FAST DROP -->
+  <div class="particles" id="particles"></div>
+
+  <div class="container">
+    <header>
+      <div class="logo">Lucid Front Plate</div>
+      <p class="tagline">Temporarily mount your license plate with no drilling.</p>
+    </header>
+
+    <img src="https://i.ibb.co/0jKXwYk/lucid-plate-holder.jpg" alt="Lucid Air & Gravity with 3D-Printed Front Plate Holder" class="product-img">
+
+    <div class="price">$45.00</div>
+    <p class="price-note">total — includes Priority shipping</p>
+
+<div class="features">
+  <h3>Precision Engineered</h3>
+  <p style="margin-bottom:0; text-align:center; font-size:1.4rem;">for</p>
+  <p class="for-models" style="margin-top:0;">Lucid Air &amp; Gravity</p>
+  <ul>
+    <li>Connects securely via factory tow eye (front bumper)</li>
+    <li>3D-printed in high-strength matte black PETG</li>
+    <li>Includes black stainless steel mounting hardware</li>
+    <li>Installs in under 3 minutes — no tools needed</li>
+    <li>Removable in seconds for car shows or photos</li>
+    <li>Compatible with <strong>Lucid Air</strong> and <strong>Lucid Gravity</strong></li>
+  </ul>
+</div>
+
+    <div class="highlight">
+      <strong>No drilling. No adhesive. No damage.</strong><br>
+      Front tow eye mount — 100% reversible.
+    </div>
+
+    <!-- PAYPAL FORM -->
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL@DOMAIN.COM">
+      <input type="hidden" name="item_name" value="Lucid Air & Gravity Temporary Front License Plate Holder">
+      <input type="hidden" name="amount" value="39.00">
+      <input type="hidden" name="shipping" value="6.00">
+      <input type="hidden" name="currency_code" value="USD">
+      <input type="hidden" name="button_subtype" value="services">
+      <input type="hidden" name="no_note" value="0">
+      <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest">
+      <button type="submit" class="btn">Add to My Lucid<br>for Only $45</button>
+    </form>
+	
+<p class="origin" style="font-size:0.98rem; color:var(--text-muted); max-width:580px; margin:48px auto; line-height:1.8; font-style:italic;">
+  <strong>Hey, fellow Lucid owner—I made this for us.</strong> 
+  I got a fix-it ticket for not having a front license plate (yes I live in California) and refuse to drill into my bumper. After trying a few ideas, I realized the tow-eye mount was the perfect spot. Using high-school trig (yes, it finally came in handy), I designed it in Fusion360 to work with our stock bracket—no extra cost, no permanent changes.  Screw it in when you need it, take it off for shows.<br> I hope you love it and use it for years to come.
+</p>
+
+    <p class="note">
+      <strong>Important:</strong> Does <em>not</em> include license plate or factory bracket.<br>
+      Holder is designed exclusively for Lucid Air &amp; Gravity models.<br>
+      <strong>Made for Lucid owners, by a Lucid owner</strong> • Handcrafted in the USA<br>
+      <strong>Ships in 2–3 business days via USPS Priority Mail.</strong>
+    </p>
+
+    <footer>
+      &copy; 2025 LucidFrontLicensePlate.com<br>
+      <a href="mailto:support@lucidfrontlicenseplate.com">support@lucidfrontlicenseplate.com</a>
+    </footer>
+  </div>
+
+  <script>
+    // PARTICLES — OFF-SCREEN, FAST DROP
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 40;
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      
+      const size = Math.random() * 5 + 3;
+      const duration = Math.random() * 6 + 8;
+      const delay = Math.random() * 3;
+      const left = Math.random() * 100;
+      const drift = (Math.random() - 0.5) * 200;
+      
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${left}%`;
+      particle.style.animationDuration = `${duration}s`;
+      particle.style.animationDelay = `${delay}s`;
+      particle.style.setProperty('--drift', `${drift}px`);
+      
+      particlesContainer.appendChild(particle);
+    }
+  </script>
+</body>
+</html>
