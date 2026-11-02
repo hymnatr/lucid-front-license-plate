@@ -2,357 +2,360 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Official Lucid Air & Gravity temporary front license plate holder. Tow-eye mount. Black stainless hardware. $49 total."/>
-  <title>Lucid Front Plate Holder – $49 | Tow-Eye Mount</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Front license plate holder for Lucid Air & Gravity. Mounts to the factory tow eye: no drilling, no adhesive. Black stainless hardware. $69 shipped." />
+  <title>Front Plate Holder for Lucid Air &amp; Gravity | No-Drill Tow-Eye Mount</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --gold: #D4AF37;
-      --gold-light: #E8C568;
-      --gold-bright: #FFD700;
-      --text: #F5F5F5;
-      --text-muted: #A0AEC0;
-      --bg: #0A0A0A;
-      --card: rgba(20, 20, 30, 0.7);
-      --border: rgba(212, 175, 55, 0.2);
+      --bg: #0b0b0c;
+      --surface: #141416;
+      --surface-2: #1b1b1e;
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --text: #f2f2f2;
+      --muted: #9a9aa2;
+      --accent: #c9a96e;          /* softer champagne gold */
+      --accent-strong: #e0c38c;
+      --radius: 16px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html, body {
-      height: 100%;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(201,169,110,0.10), transparent 60%),
+        var(--bg);
       color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* RESPONSIVE IMAGE */
-    .product-img {
-      display: block;
-      max-width: 100%;
-      max-height: 80vh;
-      width: auto;
-      height: auto;
-      margin: 48px auto;
-      border-radius: 24px;
-      object-fit: contain;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--border);
-      border: 1px solid rgba(212, 175, 55, 0.2);
-      transition: all 0.6s ease;
+    a { color: inherit; }
+
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    /* NAV */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.85rem; }
+    .nav-cta {
+      font-size: 0.85rem; font-weight: 500; text-decoration: none;
+      padding: 8px 16px; border: 1px solid var(--line-strong); border-radius: 999px;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-cta:hover { border-color: var(--accent); color: var(--accent-strong); }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px;
+      align-items: center; padding: 64px 0 80px;
+    }
+    .eyebrow {
+      color: var(--accent); font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 600;
+      line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px;
+    }
+    .lede { color: var(--muted); font-size: 1.1rem; max-width: 34ch; }
+
+    .hero-img {
+      width: 100%; height: auto; display: block;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.55);
     }
 
-    .product-img:hover {
-      transform: translateY(-12px) scale(1.01);
-      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.3);
-    }
-
-    /* PARTICLES — START OFF-SCREEN & DROP FAST */
-    .particles {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      background: transparent;  
-    }
-
-    .particle {
-      position: absolute;
-      background: var(--gold-bright);
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-      opacity: 0;
-      animation: dropFast 10s infinite linear;
-    }
-
-    @keyframes dropFast {
-      0% { transform: translateY(-150px) translateX(0); opacity: 0; }
-      5% { opacity: 0.7; }
-      95% { opacity: 0.7; }
-      100% { transform: translateY(calc(100vh + 100px)) translateX(var(--drift)); opacity: 0; }
-    }
-
-    /* REST OF YOUR ORIGINAL STYLES (unchanged) */
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 100px 20px 80px;
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: -1.5px;
-      margin-bottom: 12px;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
-
-    .tagline {
-      font-size: 1.3rem;
-      color: var(--gold);
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      margin-bottom: 48px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .price {
-      font-size: 4.2rem;
-      font-weight: 700;
-      color: #FFFFFF;
-      margin: 36px 0 16px;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-
-    .price-note {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      margin-bottom: 48px;
-      font-weight: 500;
-    }
-
-    .features {
-      text-align: left;
-      max-width: 540px;
-      margin: 0 auto 48px;
-      padding: 32px;
-      background: var(--card);
-      backdrop-filter: blur(14px);
+    /* BUY CARD */
+    .buy {
+      background: var(--surface);
+      border: 1px solid var(--line);
       border-radius: 20px;
-      border: 1px solid var(--border);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    }
-
-    .features h3 {
-      font-size: 1.8rem;
-      color: #FFFFFF;
-      margin-bottom: 8px;
-      font-weight: 700;
-      text-align: center;
-      line-height: 1.3;
-    }
-
-    .features .for-models {
-      font-size: 1.4rem;
-      color: var(--gold);
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .features ul {
-      list-style: none;
-      font-size: 1.08rem;
-    }
-
-    .features li {
-      margin: 18px 0;
-      padding-left: 44px;
-      position: relative;
-      color: #E2E8F0;
-      font-weight: 500;
-    }
-
-    .features li::before {
-      content: "✓";
-      color: var(--gold);
-      font-weight: bold;
-      font-size: 1.4em;
-      position: absolute;
-      left: 0;
-      top: -4px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    }
-
-    .highlight {
-      background: rgba(20, 20, 30, 0.75);
       padding: 28px;
-      border-left: 6px solid var(--gold);
-      margin: 48px auto;
-      max-width: 540px;
-      font-weight: 600;
-      color: #FFFFFF;
-      border-radius: 0 16px 16px 0;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.15);
-      font-size: 1.15rem;
-      line-height: 1.7;
-      backdrop-filter: blur(10px);
+      margin-top: 32px;
     }
+    .price-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+    .price { font-size: 2.4rem; font-weight: 600; letter-spacing: -0.02em; }
+    .price-note { color: var(--muted); font-size: 0.95rem; }
+    .ship-note { color: var(--muted); font-size: 0.88rem; margin-bottom: 22px; }
 
-    .paypal-form {
-      margin: 56px 0;
+    fieldset { border: 0; margin-bottom: 20px; }
+    legend { font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; color: var(--text); }
+
+    .models { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .model input { position: absolute; opacity: 0; pointer-events: none; }
+    .model label {
+      display: block; cursor: pointer; text-align: center;
+      padding: 14px 10px; border-radius: 12px;
+      background: var(--surface-2);
+      border: 1px solid var(--line-strong);
+      font-weight: 500; transition: all .2s;
     }
+    .model label small { display: block; color: var(--muted); font-weight: 400; font-size: 0.78rem; margin-top: 2px; }
+    .model label:hover { border-color: rgba(201,169,110,0.5); }
+    .model input:checked + label {
+      border-color: var(--accent);
+      background: rgba(201,169,110,0.10);
+      box-shadow: 0 0 0 1px var(--accent) inset;
+    }
+    .model input:focus-visible + label { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
+
+    .error { color: #f08a7a; font-size: 0.85rem; margin-top: 8px; display: none; }
+    .error.show { display: block; }
 
     .btn {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: #000;
-      font-size: 1.5rem;
-      font-weight: 700;
-      padding: 24px 56px;
-      border-radius: 18px;
-      text-decoration: none;
-      transition: all 0.4s ease;
-      box-shadow: 0 15px 35px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      max-width: 440px;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      position: relative;
-      overflow: hidden;
+      width: 100%; border: 0; cursor: pointer;
+      background: var(--accent); color: #111;
+      font: 600 1.05rem 'Inter', sans-serif;
+      padding: 16px 20px; border-radius: 12px;
+      transition: background .2s, transform .2s;
+    }
+    .btn:hover { background: var(--accent-strong); transform: translateY(-1px); }
+
+    .secure { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 12px; }
+
+    /* SECTIONS */
+    section { padding: 72px 0; border-top: 1px solid var(--line); }
+    h2 { font-size: 1.8rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
+    .section-sub { color: var(--muted); margin-bottom: 36px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 24px;
+    }
+    .card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .step-num {
+      display: inline-grid; place-items: center;
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1px solid var(--accent); color: var(--accent);
+      font-size: 0.85rem; font-weight: 600; margin-bottom: 14px;
     }
 
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: 0.7s;
+    .callout {
+      margin-top: 24px; padding: 18px 22px;
+      border-left: 3px solid var(--accent);
+      background: var(--surface); border-radius: 0 12px 12px 0;
     }
 
-    .btn:hover::before { left: 100%; }
+    /* STORY */
+    .story { max-width: 680px; }
+    .story p { color: #cfcfd4; margin-bottom: 14px; font-size: 1.05rem; }
+    .story .sig { color: var(--muted); font-style: italic; }
 
-    .btn:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.4);
+    /* FAQ */
+    details {
+      border-bottom: 1px solid var(--line); padding: 18px 0;
     }
-
-    .note {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      margin: 48px auto;
-      max-width: 580px;
-      line-height: 1.8;
-      font-weight: 500;
+    summary {
+      cursor: pointer; font-weight: 500; list-style: none;
+      display: flex; justify-content: space-between; gap: 16px;
     }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent); font-size: 1.3rem; line-height: 1; }
+    details[open] summary::after { content: "–"; }
+    details p { color: var(--muted); margin-top: 10px; max-width: 70ch; }
 
+    /* FOOTER */
     footer {
-      margin-top: 100px;
-      padding-top: 48px;
-      border-top: 1px solid var(--border);
-      font-size: 0.98rem;
-      color: #64748B;
+      border-top: 1px solid var(--line);
+      padding: 40px 0 56px; color: var(--muted); font-size: 0.85rem;
+    }
+    footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--accent-strong); }
+    .disclaimer { margin-top: 18px; font-size: 0.78rem; color: #6c6c74; max-width: 80ch; }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; gap: 32px; padding-top: 40px; }
+      .hero-media { order: -1; }
+      .grid-3 { grid-template-columns: 1fr; }
     }
 
-    footer a {
-      color: #94A3B8;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    footer a:hover { color: var(--gold); }
-
-    @media (max-width: 480px) {
-      .container { padding: 80px 16px 60px; }
-      .logo { font-size: 2.4rem; }
-      .price { font-size: 3.4rem; }
-      .btn { font-size: 1.35rem; padding: 20px 40px; }
-      .features { padding: 24px; }
-      .features li { padding-left: 38px; }
-      .features h3 { font-size: 1.6rem; }
-      .features .for-models { font-size: 1.3rem; }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <div class="particles" id="particles"></div>
+  <div class="wrap">
+    <nav>
+      <div class="brand">Lucid Front Plate</div>
+      <a class="nav-cta" href="#buy">Order — $69</a>
+    </nav>
 
-  <div class="container">
-    <header>
-      <div class="logo">Lucid Front Plate</div>
-      <p class="tagline">Temporarily mount your license plate with no drilling.</p>
-    </header>
+    <!-- HERO -->
+    <div class="hero">
+      <div>
+        <p class="eyebrow">For Lucid Air &amp; Gravity</p>
+        <h1>A front plate.<br>No holes in your bumper.</h1>
+        <p class="lede">Mounts to the factory tow-eye point using your stock plate bracket. Screw it in when you need it, take it off for shows.</p>
 
-    <img src="images/lucid-with-plate.jpg" alt="Lucid Air & Gravity with 3D-Printed Front Plate Holder" class="product-img">
+        <div class="buy" id="buy">
+          <div class="price-row">
+            <span class="price">$69</span>
+            <span class="price-note">shipped</span>
+          </div>
+          <p class="ship-note">Includes USPS Priority Mail · Ships in 2–3 business days</p>
 
-    <div class="price">$49.00</div>
-    <p class="price-note">total — includes Priority shipping</p>
+          <form id="order-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" novalidate>
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="hymnatr@gmail.com">
+            <input type="hidden" name="item_name" value="Front License Plate Holder - Tow-Eye Mount">
+            <!-- $59 item + $10 shipping = $69 total, matching the price shown on the page -->
+            <input type="hidden" name="amount" value="59.00">
+            <input type="hidden" name="shipping" value="10.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="no_shipping" value="2"><!-- require a shipping address -->
+            <!-- The chosen model is sent to PayPal and appears on the order -->
+            <input type="hidden" name="on0" value="Vehicle Model">
 
-    <div class="features">
-      <h3>Precision Engineered</h3>
-      <p style="margin-bottom:0; text-align:center; font-size:1.4rem;">for</p>
-      <p class="for-models" style="margin-top:0;">Lucid Air &amp; Gravity</p>
-      <ul>
-        <li>Connects securely via factory tow eye (front bumper)</li>
-        <li>3D-printed in high-strength matte black PETG</li>
-        <li>Includes black stainless steel mounting hardware</li>
-        <li>Installs in under 3 minutes — no tools needed</li>
-        <li>Removable in seconds for car shows or photos</li>
-        <li>Compatible with <strong>Lucid Air</strong> and <strong>Lucid Gravity</strong></li>
-      </ul>
+            <fieldset>
+              <legend>Which Lucid do you drive?</legend>
+              <div class="models">
+                <div class="model">
+                  <input type="radio" id="m-air" name="os0" value="Lucid Air" required>
+                  <label for="m-air">Lucid Air<small>Sedan</small></label>
+                </div>
+                <div class="model">
+                  <input type="radio" id="m-gravity" name="os0" value="Lucid Gravity">
+                  <label for="m-gravity">Lucid Gravity<small>SUV</small></label>
+                </div>
+              </div>
+              <p class="error" id="model-error" role="alert">Please choose your model so we ship the right mount.</p>
+            </fieldset>
+
+            <button type="submit" class="btn">Buy Now with PayPal</button>
+            <p class="secure">Secure checkout through PayPal · Card or PayPal balance</p>
+          </form>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <img src="images/lucid-with-plate.jpg" alt="Lucid with a front license plate mounted on the tow-eye holder" class="hero-img">
+      </div>
     </div>
 
-    <div class="highlight">
-      <strong>No drilling. No adhesive. No damage.</strong><br>
-      Front tow eye mount — 100% reversible.
-    </div>
+    <!-- FEATURES -->
+    <section>
+      <h2>Built to stay on. Easy to take off.</h2>
+      <p class="section-sub">Designed in Fusion 360 around the Lucid tow-eye point.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Zero damage</h3>
+          <p>No drilling, no adhesive. Threads into the factory tow-eye point and is 100% reversible.</p>
+        </div>
+        <div class="card">
+          <h3>Uses your stock bracket</h3>
+          <p>Works with the plate bracket that came with your car, so there's nothing extra to buy.</p>
+        </div>
+        <div class="card">
+          <h3>Durable materials</h3>
+          <p>High-strength matte black PETG with black stainless steel hardware included.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Not included:</strong> license plate or factory plate bracket.
+      </div>
+    </section>
 
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
-      <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="business" value="hymnatr@gmail.com">
-      <input type="hidden" name="item_name" value="Lucid Air & Gravity Temporary Front License Plate Holder">
-      <input type="hidden" name="amount" value="39.00">
-      <input type="hidden" name="shipping" value="10.00">
-      <input type="hidden" name="currency_code" value="USD">
-      <button type="submit" class="btn">Add to My Lucid<br>for Only $49</button>
-    </form>
+    <!-- INSTALL -->
+    <section>
+      <h2>Installs in about 5-10 minutes</h2>
+      <p class="section-sub">No tools required.</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="step-num">1</div>
+          <h3>Pop the tow-eye cover</h3>
+          <p>Remove the small cover on the front bumper.</p>
+        </div>
+        <div class="card">
+          <div class="step-num">2</div>
+          <h3>Thread in the mount</h3>
+          <p>Hand-tighten the holder into the tow-eye point.</p>
+        </div>
+        <div class="card">
+          <div class="step-num">3</div>
+          <h3>Attach your plate</h3>
+          <p>Fasten your stock bracket and plate with the included hardware.</p>
+        </div>
+      </div>
+    </section>
 
-    <p class="origin" style="font-size:0.98rem; color:var(--text-muted); max-width:580px; margin:48px auto; line-height:1.8; font-style:italic;">
-      <strong>Hey, fellow Lucid owner—I made this for us.</strong> 
-      I got a fix-it ticket for not having a front license plate (yes, I live in California) and refuse to drill into my bumper. After trying a few ideas, I realized the tow-eye mount was the perfect spot. Using high-school trig (it finally came in handy), I designed the mount in Fusion360 to work with our stock license plate bracket—no extra cost, no permanent changes.  Screw it in when you need it, take it off for shows.<br> I hope you love it and use it for years to come.
-    </p>
+    <!-- STORY -->
+    <section>
+      <h2>Made by a Lucid owner</h2>
+      <div class="story">
+        <p>I got a fix-it ticket for not having a front plate (yes, I live in California), and I wasn't going to drill into my bumper. After trying a few ideas, the tow-eye point turned out to be the perfect spot.</p>
+        <p>A little high-school trig and a lot of iterations in Fusion 360 later, I had a mount that works with the stock plate bracket and leaves no trace when it comes off.</p>
+        <p class="sig">— Brian, founder · Made in the USA</p>
+      </div>
+    </section>
 
-    <p class="note">
-      <strong>Important:</strong> Does <em>not</em> include license plate or factory license plate holder.<br>
-      This mount is designed exclusively for Lucid Air &amp; Gravity models.<br>
-      <strong>Made for Lucid owners, by a Lucid owner</strong> • Handcrafted in the USA<br>
-      <strong>Ships in 2–3 business days via USPS Priority Mail.</strong>
-    </p>
-
-    <footer>
-      &copy; 2025 LucidFrontLicensePlate.com<br>
-      <a href="mailto:lucidfrontlicenseplate@gmail.com">lucidfrontlicenseplate@gmail.com</a>
-    </footer>
+    <!-- FAQ -->
+    <section>
+      <h2>Questions</h2>
+      <details>
+        <summary>Does it fit both the Air and the Gravity?</summary>
+        <p>Yes. Just choose your model at checkout so the correct mount ships.</p>
+      </details>
+      <details>
+        <summary>Will it damage my car?</summary>
+        <p>No. It uses the existing tow-eye point, so there's no drilling or adhesive. Remove it and the car is exactly as it was.</p>
+      </details>
+      <details>
+        <summary>What do I need to provide?</summary>
+        <p>Your license plate and the factory plate bracket that came with the car. The mount and black stainless hardware are included.</p>
+      </details>
+      <details>
+        <summary>How fast does it ship?</summary>
+        <p>Orders ship within 2–3 business days via USPS Priority Mail, with tracking.</p>
+      </details>
+      <details>
+        <summary>What if there's a problem with my order?</summary>
+        <p>Email <a href="mailto:lucidfrontlicenseplate@gmail.com">lucidfrontlicenseplate@gmail.com</a> and I'll make it right.</p>
+      </details>
+    </section>
   </div>
 
-  <script>
-    const particlesContainer = document.getElementById('particles');
-    const particleCount = 40;
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <span>&copy; <span id="year">2026</span> LucidFrontLicensePlate.com</span>
+        <a href="mailto:lucidfrontlicenseplate@gmail.com">lucidfrontlicenseplate@gmail.com</a>
+      </div>
+      <p class="disclaimer">Independent aftermarket accessory. Not affiliated with, endorsed by, or sponsored by Lucid Group, Inc. "Lucid," "Air," and "Gravity" are trademarks of their respective owner and are used only to describe vehicle compatibility.</p>
+    </div>
+  </footer>
 
-    for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.classList.add('particle');
-      
-      const size = Math.random() * 5 + 3;
-      const duration = Math.random() * 6 + 8;
-      const delay = Math.random() * 3;
-      const left = Math.random() * 100;
-      const drift = (Math.random() - 0.5) * 200;
-      
-      particle.style.width = `${size}px`;
-      particle.style.height = `${size}px`;
-      particle.style.left = `${left}%`;
-      particle.style.animationDuration = `${duration}s`;
-      particle.style.animationDelay = `${delay}s`;
-      particle.style.setProperty('--drift', `${drift}px`);
-      
-      particlesContainer.appendChild(particle);
-    }
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Require a model choice before sending the customer to PayPal
+    const form = document.getElementById('order-form');
+    const err = document.getElementById('model-error');
+    form.addEventListener('submit', (e) => {
+      if (!form.querySelector('input[name="os0"]:checked')) {
+        e.preventDefault();
+        err.classList.add('show');
+        form.querySelector('.models').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+    form.querySelectorAll('input[name="os0"]').forEach(r =>
+      r.addEventListener('change', () => err.classList.remove('show'))
+    );
   </script>
 </body>
 </html>
